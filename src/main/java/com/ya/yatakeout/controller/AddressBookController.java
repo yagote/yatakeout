@@ -3,6 +3,7 @@ package com.ya.yatakeout.controller;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.ya.yatakeout.common.BaseContext;
+import com.ya.yatakeout.common.CustomException;
 import com.ya.yatakeout.common.R;
 import com.ya.yatakeout.entity.AddressBook;
 import com.ya.yatakeout.service.AddressBookService;
@@ -24,7 +25,9 @@ public class AddressBookController {
     private AddressBookService addressBookService;
 
     /**
-     * 新增
+     * 新增地址
+     * @param addressBook
+     * @return
      */
     @PostMapping
     public R<AddressBook> save(@RequestBody AddressBook addressBook) {
@@ -36,6 +39,8 @@ public class AddressBookController {
 
     /**
      * 设置默认地址
+     * @param addressBook
+     * @return
      */
     @PutMapping("default")
     public R<AddressBook> setDefault(@RequestBody AddressBook addressBook) {
@@ -54,6 +59,8 @@ public class AddressBookController {
 
     /**
      * 根据id查询地址
+     * @param id
+     * @return
      */
     @GetMapping("/{id}")
     public R get(@PathVariable Long id) {
@@ -67,6 +74,7 @@ public class AddressBookController {
 
     /**
      * 查询默认地址
+     * @return
      */
     @GetMapping("default")
     public R<AddressBook> getDefault() {
@@ -86,6 +94,8 @@ public class AddressBookController {
 
     /**
      * 查询指定用户的全部地址
+     * @param addressBook
+     * @return
      */
     @GetMapping("/list")
     public R<List<AddressBook>> list(AddressBook addressBook) {
@@ -101,4 +111,36 @@ public class AddressBookController {
         return R.success(addressBookService.list(queryWrapper));
     }
 
+
+    /**
+     * 修改地址
+     * @param addressBook
+     * @return
+     */
+    @PutMapping
+    public R<String> updateAdd(@RequestBody AddressBook addressBook) {
+        if (addressBook == null) {
+            throw new CustomException("地址信息不存在，请刷新重试");
+        }
+        addressBookService.updateById(addressBook);
+        return R.success("地址修改成功!");
+    }
+
+    /**
+     * 删除地址
+     * @param id
+     * @return
+     */
+    @DeleteMapping
+    public R<String> deleteAdd(@RequestParam("ids") Long id) {
+        if (id == null) {
+            throw new CustomException("地址信息不存在，请刷新重试");
+        }
+        AddressBook addressBook = addressBookService.getById(id);
+        if (addressBook == null) {
+            throw new CustomException("地址信息不存在，请刷新重试");
+        }
+        addressBookService.removeById(id);
+        return R.success("地址删除成功");
+    }
 }
