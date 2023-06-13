@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 
 /**
- * 自定义元数据对象处理器
+ * 自定义元数据对象处理器,公共字段的填充
  * @author yagote    create 2023/2/12 19:13
  */
 @Component

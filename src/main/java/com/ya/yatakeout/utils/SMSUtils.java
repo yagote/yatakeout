@@ -8,7 +8,7 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.profile.DefaultProfile;
 
 /**
- * 短信发送工具类
+ * 短信发送工具类，使用了阿里云短信服务的Java SDK，通过调用SDK中提供的API实现短信发送功能。
  */
 public class SMSUtils {
 

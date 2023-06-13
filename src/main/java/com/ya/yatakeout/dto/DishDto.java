@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 继承了实体类Dish，又扩展了一些属性
+ * 菜品数据传输对象：继承了实体类Dish，又扩展了一些属性
  */
 @Data
 public class DishDto extends Dish {

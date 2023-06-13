@@ -75,7 +75,7 @@ public class CommonController {
             FileInputStream fileInputStream = new FileInputStream(new File(basePath+name));
             //输出流，将文件写回浏览器
             ServletOutputStream outputStream = response.getOutputStream();
-            response.setContentType("image/jpeg");  //设置要文件的类型
+            response.setContentType("image/jpeg");  //设置文件的类型
 
             int len = 0;
             byte[] bytes = new byte[1024];

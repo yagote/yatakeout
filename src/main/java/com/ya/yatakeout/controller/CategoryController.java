@@ -13,7 +13,7 @@ import java.util.List;
 
 
 /**
- * 分类管理
+ * 菜品分类管理
  * @author yagote    create 2023/2/12 19:54
  */
 @RestController

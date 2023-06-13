@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 /**
+ * 顾客注册与登录管理
  * @author yagote    create 2023/2/14 13:50
  */
 @RestController

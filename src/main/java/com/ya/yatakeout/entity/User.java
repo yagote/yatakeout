@@ -8,7 +8,7 @@ import java.io.Serializable;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 /**
- * 用户信息
+ * 顾客实体
  */
 @Data
 public class User implements Serializable {
