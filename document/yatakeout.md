@@ -25,21 +25,21 @@
 
 #### 1.1 项目介绍
 
-![image-20230210142100809](%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230210142100809.png)
+![image-20230210142100809](yatakeout.assets/image-20230210142100809.png)
 
-![image-20230210142112259](%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230210142112259.png)
+![image-20230210142112259](yatakeout.assets/image-20230210142112259.png)
 
 #### 1.2 技术选型
 
-![image-20230210142258844](%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230210142258844.png)
+![image-20230210142258844](yatakeout.assets/image-20230210142258844.png)
 
 #### 1.3 功能架构
 
-<img src="%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230210142342975.png" alt="image-20230210142342975" style="zoom:80%;" />
+<img src="yatakeout.assets/image-20230210142342975.png" alt="image-20230210142342975" style="zoom:80%;" />
 
 #### 1.4 角色管理
 
-![image-20230210142427246](%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230210142427246.png)
+![image-20230210142427246](yatakeout.assets/image-20230210142427246.png)
 
 
 
@@ -51,9 +51,9 @@
 
 创建数据库`yatakeout`，导入数据。
 
-![image-20230210143245593](%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230210143245593.png)
+![image-20230210143245593](yatakeout.assets/image-20230210143245593.png)
 
-<img src="%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230210143618384.png" alt="image-20230210143618384" style="zoom:80%;" />
+<img src="yatakeout.assets/image-20230210143618384.png" alt="image-20230210143618384" style="zoom:80%;" />
 
 #### 2.3 Maven环境搭建
 
@@ -221,7 +221,7 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
 
 ### 3、后台系统登录功能
 
-![image-20230211174503044](%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230211174503044.png)
+![image-20230211174503044](yatakeout.assets/image-20230211174503044.png)
 
 #### 3.1 创建
 
@@ -247,7 +247,7 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
 
 登录成功后浏览器保存的数据：
 
-<img src="%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230211183655229.png" alt="image-20230211183655229" style="zoom:80%;" />
+<img src="yatakeout.assets/image-20230211183655229.png" alt="image-20230211183655229" style="zoom:80%;" />
 
 
 
@@ -268,7 +268,7 @@ public R<String> logout(HttpServletRequest request){
 
 没有登录不能看到登录后的界面，要先登录，使用过滤器或拦截器实现。
 
-<img src="%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230212112418589.png" alt="image-20230212112418589" style="zoom:80%;" />
+<img src="yatakeout.assets/image-20230212112418589.png" alt="image-20230212112418589" style="zoom:80%;" />
 
 拦截器
 
@@ -341,7 +341,7 @@ public class LoginCheckFliter implements Filter {
 
 username是唯一约束
 
-<img src="%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230212114638543.png" alt="image-20230212114638543" style="zoom:80%;" />
+<img src="yatakeout.assets/image-20230212114638543.png" alt="image-20230212114638543" style="zoom:80%;" />
 
 ```java
 public R<String> save(HttpServletRequest request,@RequestBody Employee employee){
@@ -445,9 +445,9 @@ protected void extendMessageConverters(List<HttpMessageConverter<?>> converters)
 
 ### 9、编辑员工信息
 
-<img src="%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230212160704459.png" alt="image-20230212160704459" style="zoom:80%;" />
+<img src="yatakeout.assets/image-20230212160704459.png" alt="image-20230212160704459" style="zoom:80%;" />
 
-<img src="%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230212160720527.png" alt="image-20230212160720527" style="zoom:67%;" />
+<img src="yatakeout.assets/image-20230212160720527.png" alt="image-20230212160720527" style="zoom:67%;" />
 
 查询员工信息
 
@@ -481,9 +481,9 @@ public R<String> update(HttpServletRequest request,@RequestBody Employee employe
 
 ### 10、公共字段自动填充
 
-<img src="%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230212190608233.png" alt="image-20230212190608233" style="zoom:67%;" />
+<img src="yatakeout.assets/image-20230212190608233.png" alt="image-20230212190608233" style="zoom:67%;" />
 
-<img src="%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230212190623317.png" alt="image-20230212190623317" style="zoom:67%;" />
+<img src="yatakeout.assets/image-20230212190623317.png" alt="image-20230212190623317" style="zoom:67%;" />
 
 
 
@@ -499,7 +499,7 @@ public R<String> update(HttpServletRequest request,@RequestBody Employee employe
 
 添加实体类、Service、Impl、Mapper
 
-<img src="%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230212195650807.png" alt="image-20230212195650807" style="zoom:67%;" />
+<img src="yatakeout.assets/image-20230212195650807.png" alt="image-20230212195650807" style="zoom:67%;" />
 
 ​	
 
@@ -534,7 +534,7 @@ public R<Page> page (int page,int pageSize){
 
 #### 11.3 删除分类
 
-<img src="%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230213113304220.png" alt="image-20230213113304220" style="zoom:80%;" />
+<img src="yatakeout.assets/image-20230213113304220.png" alt="image-20230213113304220" style="zoom:80%;" />
 
 基本删除功能，没有考虑是否关联了其他菜品
 
@@ -549,7 +549,7 @@ public R<String> delete(Long ids){  //这里的变量ids要和前端请求的名
 
 完善
 
-<img src="%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230213114942748.png" alt="image-20230213114942748" style="zoom:67%;" />
+<img src="yatakeout.assets/image-20230213114942748.png" alt="image-20230213114942748" style="zoom:67%;" />
 
 删除前进行判断
 
@@ -607,11 +607,11 @@ public R<String> update(@RequestBody Category category){
 
 #### 12.1 文件上传
 
-<img src="%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230213142436536.png" alt="image-20230213142436536" style="zoom:67%;" />
+<img src="yatakeout.assets/image-20230213142436536.png" alt="image-20230213142436536" style="zoom:67%;" />
 
 
 
-<img src="%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230213142611077.png" alt="image-20230213142611077" style="zoom:67%;" />
+<img src="yatakeout.assets/image-20230213142611077.png" alt="image-20230213142611077" style="zoom:67%;" />
 
 
 
@@ -677,11 +677,11 @@ public void download(String name,HttpServletResponse response){
 
 ### 13、新增菜品
 
-<img src="%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230213154644251.png" alt="image-20230213154644251" style="zoom:80%;" />
+<img src="yatakeout.assets/image-20230213154644251.png" alt="image-20230213154644251" style="zoom:80%;" />
 
 使用DTO传递数据flavor
 
-<img src="%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230213160841523.png" alt="image-20230213160841523" style="zoom:80%;" />
+<img src="yatakeout.assets/image-20230213160841523.png" alt="image-20230213160841523" style="zoom:80%;" />
 
 
 
@@ -814,7 +814,7 @@ public R<String> delete(@RequestParam List<Long> ids) {
 
 ### 16、新增套餐
 
- <img src="%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230213195824134.png" alt="image-20230213195824134" style="zoom:67%;" />
+ <img src="yatakeout.assets/image-20230213195824134.png" alt="image-20230213195824134" style="zoom:67%;" />
 
 
 
@@ -1014,7 +1014,7 @@ public R<Page> page(int page, int pageSize, Long number, String beginTime, Strin
 
 ### 20、手机验证码登录
 
-<img src="%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230214163852333.png" alt="image-20230214163852333" style="zoom: 67%;" />
+<img src="yatakeout.assets/image-20230214163852333.png" alt="image-20230214163852333" style="zoom: 67%;" />
 
 发送验证码
 
@@ -1084,7 +1084,7 @@ public R<User> login(@RequestBody Map map, HttpSession session){
 
 ### 21、导入用户地址簿
 
- <img src="%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230214165516002.png" alt="image-20230214165516002" style="zoom:80%;" />
+ <img src="yatakeout.assets/image-20230214165516002.png" alt="image-20230214165516002" style="zoom:80%;" />
 
 ```java
 @Slf4j
@@ -1211,7 +1211,7 @@ public R<List<Setmeal>> list(Setmeal setmeal){
 
 ### 23、购物车
 
-<img src="%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230214190552015.png" alt="image-20230214190552015" style="zoom:80%;" />
+<img src="yatakeout.assets/image-20230214190552015.png" alt="image-20230214190552015" style="zoom:80%;" />
 
 
 
@@ -1353,7 +1353,7 @@ public R<ShoppingCart> sub(@RequestBody ShoppingCart shoppingCart) {
 
 ### 24、下单
 
-<img src="%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96.assets/image-20230214201624564.png" alt="image-20230214201624564" style="zoom:80%;" />
+<img src="yatakeout.assets/image-20230214201624564.png" alt="image-20230214201624564" style="zoom:80%;" />
 
 
 
