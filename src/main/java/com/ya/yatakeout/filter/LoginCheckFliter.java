@@ -43,7 +43,13 @@ public class LoginCheckFliter implements Filter {
                 "/front/**",
                 "/common/**",
                 "/user/sendMsg",
-                "/user/login"
+                "/user/login",
+
+                //处理Swagger的静态文档
+                "/doc.html",
+                "/webjars/**",
+                "/swagger-resources",
+                "/v2/api-docs"
         };
 
         //2、判断本次请求是否需要处理

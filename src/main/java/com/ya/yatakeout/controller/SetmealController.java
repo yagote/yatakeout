@@ -11,6 +11,10 @@ import com.ya.yatakeout.entity.SetmealDish;
 import com.ya.yatakeout.service.CategoryService;
 import com.ya.yatakeout.service.SetmealDishService;
 import com.ya.yatakeout.service.SetmealService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
@@ -29,6 +33,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/setmeal")
 @Slf4j
+@Api(tags = "套餐相关接口")
 public class SetmealController {
 
     @Autowired
@@ -47,6 +52,7 @@ public class SetmealController {
      */
     @PostMapping
     @CacheEvict(value = "setmealCache", allEntries = true)  //设置allEntries为true，清空缓存名称为setmealCache的所有缓存
+    @ApiOperation(value = "新增套餐接口")
     public R<String> save(@RequestBody SetmealDto setmealDto){
         log.info("套餐信息：{}",setmealDto);
 
@@ -64,6 +70,12 @@ public class SetmealController {
      * @return
      */
     @GetMapping("/page")
+    @ApiOperation(value = "套餐分页查询接口")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "page",value = "页码",required = true),
+            @ApiImplicitParam(name = "pageSize",value = "每页记录数",required = true),
+            @ApiImplicitParam(name = "name",value = "套餐名称",required = false)
+    })
     public R<Page> page(int page, int pageSize, String name){
         //分页构造器对象
         Page<Setmeal> pageInfo = new Page<>(page,pageSize);
@@ -109,6 +121,7 @@ public class SetmealController {
      */
     @DeleteMapping
     @CacheEvict(value = "setmealCache",allEntries = true)
+    @ApiOperation(value = "套餐删除接口")
     public R<String> delete(@RequestParam List<Long> ids){
         log.info("ids:{}",ids);
 
@@ -211,6 +224,7 @@ public class SetmealController {
      */
     @GetMapping("/list")
     @Cacheable(value = "setmealCache", key = "#setmeal.categoryId + '_' + #setmeal.status")
+    @ApiOperation(value = "套餐条件查询接口")
     public R<List<Setmeal>> list(Setmeal setmeal){
         LambdaQueryWrapper<Setmeal> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(setmeal.getCategoryId() != null,Setmeal::getCategoryId,setmeal.getCategoryId());
